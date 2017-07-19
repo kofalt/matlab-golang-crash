@@ -23,3 +23,8 @@ source "$src"
 
 echo "Building the golang file..."
 go build -buildmode=c-shared -o simple.so simple.go
+
+# Remove typedef and line precompiler directives, as they confuse matlab
+# You can try removing this step, but you'll get a lot of warnings and the same crash.
+echo "Modifying the header file to be Matlab-compatible..."
+sed -i.original '/^typedef /d; /^\#line /d;' simple.h
