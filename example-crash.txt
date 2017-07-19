@@ -1,0 +1,64 @@
+MATLAB crash file:/Users/flywheel/matlab_crash_dump.600-1:
+
+
+------------------------------------------------------------------------
+              abort() detected at Wed Jul 19 17:04:28 2017
+------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding      : Disabled - No sandbox or build area path
+  Crash Mode          : continue (default)
+  Current Graphics Driver: Unknown hardware 
+  Current Visual      : Quartz
+  Default Encoding    : ISO-8859-1
+  Deployed            : false
+  Host Name           : MacBook-Air.local
+  MATLAB Architecture : maci64
+  MATLAB Entitlement ID: 3726038
+  MATLAB Root         : /Applications/Matlab.app
+  MATLAB Version      : 9.2.0.556344 (R2017a)
+  OpenGL              : hardware
+  Operating System    : Darwin 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017; root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64
+  Processor ID        : x86 Family 6 Model 58 Stepping 9, GenuineIntel
+  Virtual Machine     : Java 1.7.0_75-b13 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+  Window System       : Quartz
+
+Fault Count: 1
+
+
+Abnormal termination:
+abort()
+
+Register State (from fault):
+  RAX = 00007fff9f02c040  RBX = 0000000000000003
+  RCX = 0000000000000000  RDX = 00007000058c59ec
+  RSP = 0000000000000016  RBP = 00007fff962fb36c
+  RSI = 00007000058c59d0  RDI = 00007000058c6000
+
+   R8 = 0000000000000006   R9 = 883850f1be26007f
+  R10 = 0000000000000000  R11 = 00007000058c6000
+  R12 = 00007fff9f02ca20  R13 = 00007000058c5a00
+  R14 = 00007fff962fd457  R15 = 00007000058c5a20
+
+  RIP = 00000fcbbe26007f  RFL = 00007000058c5a20
+
+   CS = 000000014e7c0f2b   FS = 00007000058c5a30   GS = 00007fff96175420
+
+Stack Trace (from fault):
+[  0] 0x0000000108faa6b4                           bin/maci64/libmwfl.dylib+00034484 _ZN2fl4diag15stacktrace_base7captureERKNS0_14thread_contextEm+00000052
+[  1] 0x0000000108fae06a                           bin/maci64/libmwfl.dylib+00049258 _ZN2fl4test17terminate_handledEv+00000810
+[  2] 0x0000000108fadad9                           bin/maci64/libmwfl.dylib+00047833 _ZN2fl4diag13terminate_logEPKcPK17__darwin_ucontext+00000185
+[  3] 0x000000010b1f6591                          bin/maci64/libmwmcr.dylib+00435601 _Z19mnPrintErrorMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE+00002081
+[  4] 0x000000010b1f5ee0                          bin/maci64/libmwmcr.dylib+00433888 _Z19mnPrintErrorMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE+00000368
+[  5] 0x000000010b1f6e3a                          bin/maci64/libmwmcr.dylib+00437818 _Z19mnPrintErrorMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE+00004298
+[  6] 0x000000010b1f57de                          bin/maci64/libmwmcr.dylib+00432094 _Z22mnInstallCrashHandlersv+00000366
+[  7] 0x000000014e7bbc2d /Users/flywheel/Downloads/matlab-golang-crash/simple.so+00302125 runtime.sigfwd+00000029
+
+
+If this problem is reproducible, please submit a Service Request via:
+    http://www.mathworks.com/support/contact_us/
+
+A technical support engineer might contact you with further information.
+
+Thank you for your help.
+
