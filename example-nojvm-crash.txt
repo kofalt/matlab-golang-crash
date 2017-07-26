@@ -1,0 +1,82 @@
+```
+$ /Applications/Matlab.app/bin/matlab -nojvm
+
+                                                  < M A T L A B (R) >
+                                        Copyright 1984-2017 The MathWorks, Inc.
+                                         R2017a (9.2.0.556344) 64-bit (maci64)
+                                                    March 27, 2017
+
+
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+
+>> addpath('/Users/flywheel/matlab-golang-crash')
+>> loadlibrary('simple', 'simple.h')
+runtime/cgo: could not obtain pthread_keys
+	tried 0x119 0x11a 0x11b 0x11c 0x11d 0x11e 0x11f 0x120 0x121 0x122 0x123 0x124 0x125 0x126 0x127 0x128 0x129 0x12a 0x12b 0x12c 0x12d 0x12e 0x12f 0x130 0x131 0x132 0x133 0x134 0x135 0x136 0x137 0x138 0x139 0x13a 0x13b 0x13c 0x13d 0x13e 0x13f 0x140 0x141 0x142 0x143 0x144 0x145 0x146 0x147 0x148 0x149 0x14a 0x14b 0x14c 0x14d 0x14e 0x14f 0x150 0x151 0x152 0x153 0x154 0x155 0x156 0x157 0x158 0x159 0x15a 0x15b 0x15c 0x15d 0x15e 0x15f 0x160 0x161 0x162 0x163 0x164 0x165 0x166 0x167 0x168 0x169 0x16a 0x16b 0x16c 0x16d 0x16e 0x16f 0x170 0x171 0x172 0x173 0x174 0x175 0x176 0x177 0x178 0x179 0x17a 0x17b 0x17c 0x17d 0x17e 0x17f 0x180 0x181 0x182 0x183 0x184 0x185 0x186 0x187 0x188 0x189 0x18a 0x18b 0x18c 0x18d 0x18e 0x18f 0x190 0x191 0x192 0x193 0x194 0x195 0x196 0x197 0x198
+>>
+------------------------------------------------------------------------
+              abort() detected at Wed Jul 26 11:26:57 2017
+------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding      : Disabled - No sandbox or build area path
+  Crash Mode          : continue (default)
+  Current Graphics Driver: Unknown software
+  Current Visual      : Quartz
+  Default Encoding    : ISO-8859-1
+  Deployed            : false
+  Host Name           : MacBook-Air.local
+  MATLAB Architecture : maci64
+  MATLAB Entitlement ID: 3726038
+  MATLAB Root         : /Applications/Matlab.app
+  MATLAB Version      : 9.2.0.556344 (R2017a)
+  OpenGL              : hardware
+  Operating System    : Darwin 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017; root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64
+  Processor ID        : x86 Family 6 Model 58 Stepping 9, GenuineIntel
+  Window System       : Quartz
+
+Fault Count: 1
+
+
+Abnormal termination:
+abort()
+
+Register State (from fault):
+  RAX = 00007fffaef18040  RBX = 0000000000000003
+  RCX = 0000000000000000  RDX = 0000700007a629ec
+  RSP = 0000000000000016  RBP = 00007fffa61e736c
+  RSI = 0000700007a629d0  RDI = 0000700007a63000
+
+   R8 = 0000000000000006   R9 = b436c8390771009b
+  R10 = 0000000000000000  R11 = 0000700007a63000
+  R12 = 00007fffaef18a20  R13 = 0000700007a62a00
+  R14 = 00007fffa61e9457  R15 = 0000700007a62a20
+
+  RIP = 0000100b0771009b  RFL = 0000700007a62a20
+
+   CS = 0000000123218f2b   FS = 0000700007a62a30   GS = 00007fffa6061420
+
+Stack Trace (from fault):
+[  0] 0x000000011088e6b4                           bin/maci64/libmwfl.dylib+00034484 _ZN2fl4diag15stacktrace_base7captureERKNS0_14thread_contextEm+00000052
+[  1] 0x000000011089206a                           bin/maci64/libmwfl.dylib+00049258 _ZN2fl4test17terminate_handledEv+00000810
+[  2] 0x0000000110891ad9                           bin/maci64/libmwfl.dylib+00047833 _ZN2fl4diag13terminate_logEPKcPK17__darwin_ucontext+00000185
+[  3] 0x00000001132d0591                          bin/maci64/libmwmcr.dylib+00435601 _Z19mnPrintErrorMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE+00002081
+[  4] 0x00000001132cfee0                          bin/maci64/libmwmcr.dylib+00433888 _Z19mnPrintErrorMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE+00000368
+[  5] 0x00000001132d0e3a                          bin/maci64/libmwmcr.dylib+00437818 _Z19mnPrintErrorMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE+00004298
+[  6] 0x00000001132cf7de                          bin/maci64/libmwmcr.dylib+00432094 _Z22mnInstallCrashHandlersv+00000366
+[  7] 0x0000000123213c2d   /Users/flywheel/matlab-golang-crash/simple.dylib+00302125 runtime.sigfwd+00000029
+
+
+If this problem is reproducible, please submit a Service Request via:
+    http://www.mathworks.com/support/contact_us/
+
+A technical support engineer might contact you with further information.
+
+Thank you for your help.** This crash report has been saved to disk as /Users/flywheel/matlab_crash_dump.8397-1 **
+
+
+
+MATLAB is exiting because of fatal error
+Killed: 9
+```
