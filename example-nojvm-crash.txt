@@ -1,4 +1,3 @@
-```
 $ /Applications/Matlab.app/bin/matlab -nojvm
 
                                                   < M A T L A B (R) >
@@ -79,4 +78,3 @@ Thank you for your help.** This crash report has been saved to disk as /Users/fl
 
 MATLAB is exiting because of fatal error
 Killed: 9
-```
