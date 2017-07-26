@@ -2,6 +2,9 @@
 set -euo pipefail
 unset CDPATH; cd "$( dirname "${BASH_SOURCE[0]}" )"; cd "$(pwd -P)"
 
+# Get system info
+localOs=$( uname -s | tr '[:upper:]' '[:lower:]' )
+
 # Prepare golang and gimme (tool from Travis CI that helps you install golang)
 export GO_VERSION="1.8.3"
 export GIMME_GO_VERSION=$GO_VERSION
@@ -22,7 +25,16 @@ test -f "$src" || (
 source "$src"
 
 echo "Building the golang file..."
-go build -buildmode=c-shared -o simple.so simple.go
+
+echo "Building the C bridge..."
+
+if [[ "$localOs" == "darwin" ]]; then
+    ext="dylib"
+else
+    ext="so"
+fi
+
+go build -buildmode=c-shared -o simple.$ext simple.go
 
 # Remove typedef and line precompiler directives, as they confuse matlab
 # You can try removing this step, but you'll get a lot of warnings and the same crash.

@@ -20,7 +20,7 @@ Next, load the object into Matlab:
 
 addpath('/path/to/matlab-golang-crash')
 
-loadlibrary('simple.so', 'simple.h')
+loadlibrary('simple', 'simple.h')
 
 ptrValue = calllib('simple', 'SimpleExample')
 ```
